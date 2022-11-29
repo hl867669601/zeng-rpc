@@ -1,5 +1,6 @@
 package club.xiaozeng.common.exception;
 
+import club.xiaozeng.common.enums.RpcErrorEnum;
 import lombok.Data;
 
 /**
@@ -7,8 +8,17 @@ import lombok.Data;
  * @author: zengh
  * @description:
  */
-@Data
 public class RpcException extends RuntimeException {
+    public RpcException(RpcErrorEnum rpcErrorEnum,String detail){
+        super(rpcErrorEnum.getMessage()+":"+detail);
+    }
 
+    public RpcException(String message,Throwable cause){
+        super(message,cause);
+    }
+
+    public RpcException(RpcErrorEnum rpcErrorEnum){
+        super(rpcErrorEnum.getMessage());
+    }
 
 }
