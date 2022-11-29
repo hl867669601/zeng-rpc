@@ -1,0 +1,6 @@
+*.txt
+target/
+.idea/
+
+
+
